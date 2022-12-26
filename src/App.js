@@ -1,11 +1,15 @@
-import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import LoginPage from './pages/loginPage/loginPage';
+import { Routes, useRoutes } from 'react-router-dom';
+import routes from './routes';
+
 
 function App() {
+  const element = useRoutes(routes)
   return (
     <div className="App">
-      <LoginPage/>
+      <Routes>
+        {element}
+      </Routes>
     </div>
   );
 }

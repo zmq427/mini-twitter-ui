@@ -1,16 +1,17 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import banner from '../../assets/twitter-banner.png'
-import Login from '../../components/login/login'
-import Signup from '../../components/signup/signup'
+import Login from '../login/login'
+import Signup from '../signup/signup'
 
-export default function () {
+export default function LoginPage() {
   return (
     <div>
-      <img src={banner} alt='banner' className='banner'/>
+      <img src={banner} alt='banner' className='banner' style={{display: 'none'}}/>
       <Routes>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/loginPage/login' element={<Login/>}/>
+        <Route path='/loginPage/signup' element={<Signup/>}/>
+        <Route path='/loginPage' element={<Navigate to='/loginPage/login'/>}/>
       </Routes>
     </div>
   )

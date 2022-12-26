@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { Link, Router, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 async function request(input1, input2) {
   var data;
