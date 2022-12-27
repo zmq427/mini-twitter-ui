@@ -10,18 +10,18 @@ export default function Signup() {
   const nav = useNavigate()
 
   async function handleConfirm() {
-    var data;
+    var result;
     await axios({
       method: "get",
       url:`http://localhost:8080/Mini-Twitter/registerServlet?username=${username}&password=${password}`
     }).then(function (resp) {
       console.log(resp.data)
-      data = resp.data
+      result = resp.data
     }).catch(function (error) {
       console.log(error)
     })
 
-    if (data == null) {
+    if (result.code === 0) {
       // 用户名已经存在
       document.getElementById("usernameExist").style.display = 'block'
     } else {

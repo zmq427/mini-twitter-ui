@@ -1,5 +1,4 @@
-import { useRoutes, Routes, Route, Navigate } from 'react-router-dom';
-import routes from './routes';
+import {  Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/loginPage/loginPage';
 import Home from './pages/home/home';
 import Login from './pages/login/login';
@@ -7,7 +6,6 @@ import Signup from './pages/signup/signup';
 import './App.css';
 
 function App() {
-  const element = useRoutes(routes)
   return (
     <div className="App">
       <Routes>

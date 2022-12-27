@@ -1,8 +1,6 @@
 import React from 'react'
-import { Route, Routes, Navigate, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import banner from '../../assets/twitter-banner.png'
-import Login from '../login/login'
-import Signup from '../signup/signup'
 
 export default function LoginPage() {
   return (

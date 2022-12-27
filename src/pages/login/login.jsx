@@ -11,24 +11,24 @@ function Login() {
   let navigate = useNavigate()
 
   async function request(input1, input2) {
-    var data;
+    var result;
     await axios({
       method: 'get',
       url: `http://localhost:8080/Mini-Twitter/loginServlet?username=${input1}&password=${input2}`
     }).then(function (resp) {
-      console.log(resp)
-      data = resp.data
+      console.log(JSON.stringify(resp.data))
+      result = resp.data
     }).catch(function (error) {
       console.log(error)
     })
   
-    if (data != null) {
+    if (result.code === 1) {
       // 查询到数据,登录成功
       document.getElementById("isMatch").style.display = 'none'
       // 存储到本地
-      localStorage.setItem('userInfo', data.username)
+      localStorage.setItem('userInfo', result.data.username)
       // 跳转到Home页面
-      navigate('/' + data.username)
+      navigate('/' + result.data.username)
   
     } else {
       // 未查询到数据，显示提示信息

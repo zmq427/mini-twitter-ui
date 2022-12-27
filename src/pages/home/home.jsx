@@ -15,7 +15,7 @@ export default function Home() {
       navigate('/loginPage/login')
     }
     setLogged(user != null)
-  })
+  }, [navigate])
   
   async function handleLogout() {
     localStorage.removeItem('userInfo')
