@@ -26,10 +26,10 @@ export default function Signup() {
       document.getElementById("usernameExist").style.display = 'block'
     } else {
       document.getElementById("usernameExist").style.display = 'none'
-      // 用户名可用
+      // 用户名不存在，可用
       alert('Successfully registered')
       // 跳转至登录界面
-      nav('/login')
+      nav('../login')
     }
   }
 
@@ -40,7 +40,7 @@ export default function Signup() {
       <input type="text" placeholder='username' value={username} onChange={(e)=>{setUsername(e.target.value)}}/><br/>
       <input type="text" placeholder='password' value={password} onChange={(e)=>{setPassword(e.target.value)}}/><br/>
       <p id="usernameExist" style={{display: 'none'}}>This username has been used...</p>
-      <Link to="/login"><button>Back</button></Link>
+      <Link to="../login"><button>Back</button></Link>
       <button onClick={handleConfirm}>Confirm</button>
     </div>
   )
