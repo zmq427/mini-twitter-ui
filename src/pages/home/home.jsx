@@ -2,6 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import SideBar from "../../components/sideBar/sideBar";
+import Tweet from "../../components/tweet/tweet";
+import Userlist from "../../components/userlist";
 
 export default function Home() {
 
@@ -41,7 +44,9 @@ export default function Home() {
         </div> : 
         <p>User hasn't logged in</p>
       }
-      
+      <SideBar/>
+      <Tweet/>
+      <Userlist/>
     </div>
   )
 }
