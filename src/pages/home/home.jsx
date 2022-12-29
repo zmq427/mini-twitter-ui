@@ -5,6 +5,7 @@ import axios from "axios";
 import SideBar from "../../components/sideBar/sideBar";
 import Tweet from "../../components/tweet/tweet";
 import Userlist from "../../components/userlist";
+import Stream from "../../components/stream";
 
 export default function Home() {
 
@@ -39,14 +40,17 @@ export default function Home() {
       { 
         logged?
         <div>
-          <p>User has logged in, current user is {localStorage.getItem('userInfo')}</p>
+          <p>User has logged in, current user is {JSON.parse(localStorage.getItem('userInfo')).username}</p>
           <button onClick={handleLogout}>log out</button>
         </div> : 
         <p>User hasn't logged in</p>
       }
       <SideBar/>
       <Tweet/>
+      <h2>Userlist</h2>
       <Userlist/>
+      <h2>TweetList</h2>
+      <Stream/>
     </div>
   )
 }

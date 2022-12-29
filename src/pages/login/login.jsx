@@ -2,8 +2,6 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-
-
 function Login() {
 
   const [username, setUsername] = useState("")
@@ -26,7 +24,7 @@ function Login() {
       // 查询到数据,登录成功
       document.getElementById("isMatch").style.display = 'none'
       // 存储到本地
-      localStorage.setItem('userInfo', result.data.username)
+      localStorage.setItem('userInfo', JSON.stringify(result.data))
       // 跳转到Home页面
       navigate('/' + result.data.username)
   

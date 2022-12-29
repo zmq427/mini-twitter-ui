@@ -6,12 +6,12 @@ export default function Tweet() {
   async function handleClick() {
     var tweet_text = document.getElementById("tweet_body").value
     var current_time = dateFormater(new Date())
-    var user = localStorage.getItem('userInfo')
+    var user = JSON.parse(localStorage.getItem('userInfo'))
     await axios.post('http://localhost:8080/Mini-Twitter/tweetServlet',
       {
         tweet_text: tweet_text,
-        user_id: '1',
-        username: 'zmq',
+        user_id: user.userId,
+        username: user.username,
         timestamp: current_time
       }
     ).then(function(response) {
